@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main() {
+int main(int argc, const char * argv[]) {
 
   int valor;
   int opcao;
@@ -14,19 +15,25 @@ int main() {
   getchar(); // Limpar o buffer do teclado
 
   // Condição para cada opção de conversão
-  if (opcao == 1) {
+  switch (opcao) {
+  case 1:
     printf("Digite o número: ");
     scanf("%d", &valor); // Receber o valor do usuário
     getchar();
-    printf("\nDecimal: %d \nHexadecimal: %x", valor, valor);
-  } else if (opcao == 2) {
+    printf("\nDecimal: %d \nHexadecimal: %x\n", valor, valor);
+    break;
+
+  case 2:
     printf("Digite o número: ");
     scanf("%x", &valor); // Receber o valor do usuário
     getchar();
-    printf("\nHexadecimal: %x \nDecimal: %d", valor, valor);
-  } else {
+    printf("\nHexadecimal: %x \nDecimal: %d\n", valor, valor);
+    break;
+
+  default:
     printf("Opção inválida!");
+    break;
   }
-  
+
   return 0;
 }
