@@ -1,0 +1,64 @@
+Log de Vendas:
+
+18 35 5
+22 60 9
+23 89 2
+31 28 1
+44 30 7
+18 49 5
+22 27 12
+23 59 6
+31 78 3
+44 90 3
+18 35 4
+22 60 8
+23 89 1
+31 28 6
+44 49 4
+18 78 10
+22 27 2
+23 28 8
+18 90 3
+22 30 9
+
+Catalogo de Produtos:
+
+35 60.00 Paleta
+60 25.00 Batom
+89 31.00 Blush
+28 40.00 Base
+30 15.00 Delineador
+49 18.00 Rimel
+27 22.00 Prime
+59 27.00 Pinceis
+78 9.00 Esmalte
+90 6.50 Glitter
+
+Lista de Vendedores:
+
+18 Steve
+22 Natasha
+23 Josiel
+31 Loki
+44 Wanda
+
+Total geral vendido: R$2686.00
+
+Total de vendas de cada produto:
+Produto 35 (Paleta): R$540.00
+Produto 60 (Batom): R$425.00
+Produto 89 (Blush): R$93.00
+Produto 28 (Base): R$600.00
+Produto 30 (Delineador): R$240.00
+Produto 49 (Rimel): R$162.00
+Produto 27 (Prime): R$308.00
+Produto 59 (Pinceis): R$162.00
+Produto 78 (Esmalte): R$117.00
+Produto 90 (Glitter): R$39.00
+
+Total de vendas de cada vendedor:
+Vendedor 18 (Steve): R$739.50
+Vendedor 22 (Natasha): R$868.00
+Vendedor 23 (Josiel): R$575.00
+Vendedor 31 (Loki): R$307.00
+Vendedor 44 (Wanda): R$196.50

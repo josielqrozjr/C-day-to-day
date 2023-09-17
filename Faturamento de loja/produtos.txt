@@ -1,0 +1,11 @@
+10
+35 60.00 Paleta
+60 25.00 Batom
+89 31.00 Blush
+28 40.00 Base
+30 15.00 Delineador
+49 18.00 Rimel
+27 22.00 Prime
+59 27.00 Pinceis
+78 9.00 Esmalte
+90 6.50 Glitter
