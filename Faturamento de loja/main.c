@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+//---------------------------------------------
+// Definição das estruturas de cada arquivo
+//---------------------------------------------
 typedef struct {
     int codigo;
     float preco;
@@ -19,6 +22,9 @@ typedef struct {
   int qtdVendida;
 } Vendas;
 
+//---------------------------------------------
+// Funções para ler o conteúdo dos arquivos
+//---------------------------------------------
 void lerProdutos(char arquivo[], Produto produtos[], int *quantProdutos) {
     FILE *arqProduto = fopen(arquivo, "r");
     if (arqProduto == NULL) { perror("ERRO no arquivo produtos!"); exit(1); }
@@ -55,12 +61,15 @@ void lerVendas(char arquivo[], Vendas vendas[], int *quantVendas) {
     fclose(arqVendas);
 }
 
+//---------------------------------------------
+// Função principal para analisar o dados
+//---------------------------------------------
 int main(int argc, const char * argv[]) {
 
   int qtdProdutos, qtdVendedores, qtdVendas;
-  Produto produtos[100];
-  Vendedor vendedores[100];
-  Vendas vendas[100];
+  Produto produtos[100]; // Tabela produtos
+  Vendedor vendedores[100]; // Tabela vendedores
+  Vendas vendas[100]; // Tabela vendas
   float totalPorProduto[100] = {0};
   float totalPorVendedor[100] = {0};
   float totalGeral;
@@ -73,30 +82,33 @@ int main(int argc, const char * argv[]) {
   for (int v = 0; v < qtdVendas; v++) {
     for (int p = 0; p < qtdProdutos; p++) {
       if (vendas[v].codigoProduto == produtos[p].codigo){
-        totalPorProduto[p] += vendas[v].qtdVendida * produtos[p].preco;
-        totalGeral += vendas[v].qtdVendida * produtos[p].preco;
+        totalPorProduto[p] += vendas[v].qtdVendida * produtos[p].preco; // Adicionar valores da venda por produto na variável
+        totalGeral += vendas[v].qtdVendida * produtos[p].preco; // Adicionar valores do total geral de vendas
       }
     }
   }
   
   // Totais de vendas por vendedor
-  for (int v = 0; v < qtdVendas; v++) {
+  for (int v = 0; v < qtdVendas; v++) { // Loop para percorrer o conteúdo armazenado
     for (int p = 0; p < qtdVendedores; p++) {
       for (int j = 0; j < qtdProdutos; j++) {
         if (vendas[v].codigoVendedor == vendedores[p].codigo){
           if (vendas[v].codigoProduto == produtos[j].codigo){
-            totalPorVendedor[p] += vendas[v].qtdVendida * produtos[j].preco;
+            totalPorVendedor[p] += vendas[v].qtdVendida * produtos[j].preco; // Adicionar valores da venda por vendedor na variável
           }
         }
       }
     }
   }
 
+//---------------------------------------------
+// Registro dos dados obtidos no arquivo totais.txt
+//---------------------------------------------
   FILE* arqTotais = fopen("totais.txt", "w");
   if (arqTotais == NULL) { perror("ERROR ao registrar totais!"); exit(1); }
   
   fprintf(arqTotais, "Log de Vendas:\n\n");
-  for (int linha = 0; linha < qtdVendas; linha++) {
+  for (int linha = 0; linha < qtdVendas; linha++) { // Ler cada linha e registra no arquivo
     fprintf(arqTotais, "%d %d %d\n", 
       vendas[linha].codigoVendedor, 
       vendas[linha].codigoProduto, 
